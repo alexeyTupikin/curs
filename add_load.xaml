@@ -11,11 +11,11 @@
         <DataGrid x:Name="data_grid_load" Margin="20,50,328,20" SelectionChanged="data_grid_load_SelectionChanged">
         </DataGrid>
         <Label Content="Уже имеющиеся нагрузки:" HorizontalAlignment="Left" Margin="20,20,0,320"/>
-        <ComboBox x:Name="chouse_disc" Style="{StaticResource ComboBoxTheme}" Margin="372,57,128,288" Height="25" SelectionChanged="chouse_disc_SelectionChanged"/>
-        <ComboBox x:Name="chouse_teacher" Style="{StaticResource ComboBoxTheme}" Margin="372,93,128,252" Height="25" SelectionChanged="chouse_teacher_SelectionChanged"/>
-        <Button x:Name="add_new_load"  Style="{StaticResource ButtonTheme}" Click="add_new_load_Click" Content="Добавить" Margin="372,129,128,216" Height="25" IsEnabled="False"/>
+        <ComboBox x:Name="chouse_disc" Style="{StaticResource ComboBoxTheme}" Margin="372,57,108,288" Height="25" SelectionChanged="chouse_disc_SelectionChanged"/>
+        <ComboBox x:Name="chouse_teacher" Style="{StaticResource ComboBoxTheme}" Margin="372,93,108,252" Height="25" SelectionChanged="chouse_teacher_SelectionChanged"/>
+        <Button x:Name="add_new_load"  Style="{StaticResource ButtonTheme}" Click="add_new_load_Click" Content="Добавить" Margin="372,129,108,216" Height="25" IsEnabled="False"/>
         <Label Content="Выберите дисциплину &#xD;&#xA;и преподавателя:" Margin="372,15,128,313"/>
-        <Button x:Name="delete_load"  Style="{StaticResource ButtonTheme}" Content="Удалить" Click="delete_load_Click" Margin="372,320,128,15" IsEnabled="False"/>
+        <Button x:Name="delete_load"  Style="{StaticResource ButtonTheme}" Content="Удалить" Click="delete_load_Click" Margin="372,320,108,15" IsEnabled="False"/>
         <Label Content="Выберите нагрузку в таблице &#xD;&#xA;и нажмите Приступить." Margin="372,165,103,162"/>
         <Button x:Name="proc"  Style="{StaticResource ButtonTheme}" Click="proc_Click" Content="Приступить" Margin="552,209,10,136" Height="25" IsEnabled="False"/>
         <ComboBox x:Name="id_user_combo" Style="{StaticResource ComboBoxTheme}" Margin="372,208,108,137"  IsEnabled="False" Height="25"/>

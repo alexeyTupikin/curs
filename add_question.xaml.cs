@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace curs
 {
@@ -162,7 +163,7 @@ namespace curs
 
         private void textQuestion_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (textQuestion.Text != "")
+            if ((textQuestion.Text != "") && (textQuestion.Text.Length > 0))
             {
                 flag_text = 0;
                 add_button.IsEnabled = true;
