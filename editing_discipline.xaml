@@ -1,0 +1,21 @@
+﻿<Page x:Class="curs.editing_discipline"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="editing_discipline">
+    <Grid>
+        <DataGrid x:Name="data_grid_disc" HorizontalAlignment="Left" Height="275" Margin="10,48,0,0" VerticalAlignment="Top" Width="364" SelectionChanged="data_grid_disc_Selected"/>
+        <Button x:Name="delete_disc" Style="{StaticResource ButtonTheme}" Click="delete_disc_Click" Content="Удалить" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="131" Height="24"/>
+        <Button x:Name="re_delete_disc" Style="{StaticResource ButtonTheme}" Click="re_delete_disc_Click" Content="Восстановить" HorizontalAlignment="Left" Margin="243,336,0,0" VerticalAlignment="Top" Width="131" Height="24"/>
+        <Label Content="Дисциплины и их статус. Для того что бы приступить к работе &#xD;&#xA;выберите нужный элемент и соответствующую кнопку." HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Height="42" Width="364"/>
+        <Button x:Name="proc_button"  Style="{StaticResource ButtonTheme}" Click="proc_button_Click"  Height="24" Content="Приступить к редактированию" HorizontalAlignment="Left" Margin="388,48,0,0" VerticalAlignment="Top" Width="232" IsEnabled="False"/>
+        <TextBox x:Name="edit_title_disc" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Height="24" Margin="388,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" IsEnabled="False"/>
+        <Button x:Name="add_button"  Style="{StaticResource ButtonTheme}" Click="add_button_Click"  Height="24" Content="Приступить к добавлению" HorizontalAlignment="Left" Margin="388,172,0,0" VerticalAlignment="Top" Width="232" IsEnabled="False"/>
+        <TextBox x:Name="new_title_disc" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Height="24" Margin="388,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" IsEnabled="False"/>
+        <Button x:Name="save_button" Height="24" Style="{StaticResource ButtonTheme}" Click="save_button_Click" Content="Сохранить" HorizontalAlignment="Left" Margin="388,238,0,0" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+    </Grid>
+</Page>

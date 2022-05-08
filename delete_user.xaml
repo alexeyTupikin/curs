@@ -1,0 +1,18 @@
+﻿<Page x:Class="curs.delete_user"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="delete_user">
+
+    <Grid Margin="0,0,0,0">
+        <DataGrid x:Name="data_grid_users" Margin="20,50,270,28" AutoGenerateColumns="True" SelectionChanged="data_grid_users_SelectionChanged" IsReadOnly="True" CanUserSortColumns="False">
+        </DataGrid>
+        <Button x:Name="delete"  Style="{StaticResource ButtonTheme}" Content="Удалить" HorizontalAlignment="Left" IsEnabled="False" Margin="395,310,0,0" Click="delete_Click" VerticalAlignment="Top" Height="32" Width="143"/>
+        <Label Content="Выберите из списка пользователя, которого хотите удалить, &#xD;&#xA;после чего нажмите кнопку Удалить." HorizontalAlignment="Left" Margin="20,8,0,0" VerticalAlignment="Top" Width="360"/>
+
+    </Grid>
+</Page>

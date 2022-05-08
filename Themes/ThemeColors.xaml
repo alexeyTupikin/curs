@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="DefaultColor" Color="#FFECECD1"/>
+    <SolidColorBrush x:Key="AlterColor" Color="#FF6A5941"/>
+    <SolidColorBrush x:Key="DefaultTextColor" Color="Black"/>
+    <SolidColorBrush x:Key="AlterTextColor" Color="#FFECECD1"/>
+    <SolidColorBrush x:Key="DefaultBorderColor" Color="White"/>
+    <SolidColorBrush x:Key="AlterBorderColor" Color="#cc6330c1"/>
+</ResourceDictionary>

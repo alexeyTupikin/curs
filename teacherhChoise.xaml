@@ -1,0 +1,24 @@
+﻿<Page x:Class="curs.teacherhChoise"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="teacherhChoise">
+
+    <Grid>
+        <Menu Width="650" Height="24" VerticalAlignment="Top" Background="#FFCBCBB6">
+            <MenuItem Height="24" Header="Опции">
+                <MenuItem x:Name="q_akk" Header="Выйти из аккаунта" Click="q_akk_Click"/>
+                <MenuItem x:Name="q_p" Header="Выйти из приложения" Click="q_p_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label Content="Выберите одно из действий:" HorizontalAlignment="Center" Margin="243,100,240,0" VerticalAlignment="Top"/>
+        <Button x:Name="generation" Style="{StaticResource ButtonTheme}" Content="Сгенирировать билет" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="25" Click="generation_Click" Margin="243,131,0,0"/>
+        <Button x:Name="add"  Style="{StaticResource ButtonTheme}" Content="Добавить новый вопрос" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="25" Click="add_Click" Margin="243,161,0,0"/>
+        <Button x:Name="editing"  Style="{StaticResource ButtonTheme}" Content="Редактировать вопрос" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="25" Click="editing_Click" Margin="243,191,0,0"/>
+        <Button x:Name="removal"  Style="{StaticResource ButtonTheme}" Content="Удалить вопрос" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="25" Click="removal_Click" Margin="243,221,0,0"/>
+    </Grid>
+</Page>

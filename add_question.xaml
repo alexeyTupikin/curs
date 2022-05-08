@@ -1,0 +1,22 @@
+﻿<Page x:Class="curs.add_question"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="add_question">
+    <Grid>
+        <Label Content="Для добавления вопроса в базу данных выберите параметры вопрос." Margin="16,10,233,335" Height="25"/>
+        <Label Content="Выберите дисциплину, в которую хотите добавить вопрос:" Height="25" Margin="16,40,295,305"/>
+        <ComboBox x:Name="chouseDiscipline" Style="{StaticResource ComboBoxTheme}" HorizontalAlignment="Left" SelectionChanged="chouseDiscipline_SelectionChanged" Margin="16,70,0,0" VerticalAlignment="Top" Width="204"/>
+        <Label Content="Выберите тип вопроса:" HorizontalAlignment="Left" Margin="16,92,0,0" VerticalAlignment="Top" Width="150" Height="25"/>
+        <ComboBox x:Name="chouseType" Style="{StaticResource ComboBoxTheme}" HorizontalAlignment="Left" IsEnabled="False" SelectionChanged="chouseType_SelectionChanged" Margin="16,122,0,0" VerticalAlignment="Top" Width="204"/>
+        <Label Content="Выберите сложность вопроса:" HorizontalAlignment="Left" Margin="16,149,0,0" VerticalAlignment="Top" Height="25"/>
+        <ComboBox x:Name="chouseComplexity" Style="{StaticResource ComboBoxTheme}" HorizontalAlignment="Left" IsEnabled="False" SelectionChanged="chouseComplexity_SelectionChanged" Margin="16,174,0,0" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="textQuestion" TextChanged="textQuestion_TextChanged" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" IsEnabled="False" Margin="16,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="134"/>
+        <Label Content="Введите содержание вопроса:" HorizontalAlignment="Left" Margin="16,196,0,0" VerticalAlignment="Top" Width="204" Height="25"/>
+        <Button x:Name="add_button"  Style="{StaticResource ButtonTheme}" Click="add_Click" Content="Добавить" HorizontalAlignment="Left" IsEnabled="False" Margin="238,318,0,0" VerticalAlignment="Top" Height="42" Width="154" FontWeight="Bold"/>
+    </Grid>
+</Page>

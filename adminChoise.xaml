@@ -1,0 +1,24 @@
+﻿<Page x:Class="curs.adminChoise"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="adminChoise">
+
+    <Grid>
+        <Menu Width="650" Height="24" VerticalAlignment="Top" Background="#FFCBCBB6">
+            <MenuItem Height="24" Header="Опции">
+                <MenuItem x:Name="q_akk" Header="Выйти из аккаунта" Click="q_akk_Click"/>
+                <MenuItem x:Name="q_p" Header="Выйти из приложения" Click="q_p_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label Content="Выберите таблицу &#xD;&#xA;и действие с ней" HorizontalAlignment="Left" Margin="50,112,0,0" VerticalAlignment="Top" Width="114" Height="48"/>
+        <ComboBox x:Name="chouseTable" Style="{StaticResource ComboBoxTheme}" SelectionChanged="chouseTable_SelectionChanged" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" Width="144" Height="24"/>
+        <ComboBox x:Name="chouseAction" Style="{StaticResource ComboBoxTheme}" SelectionChanged="chouseAction_SelectionChanged" HorizontalAlignment="Left" Margin="50,185,0,0" VerticalAlignment="Top" Width="144" Height="24"/>
+        <Button x:Name="proc_button"  Style="{StaticResource ButtonTheme}" Content="Приступить" Click="proceed_to_Click" HorizontalAlignment="Left" IsEnabled="False" Margin="50,225,0,0" VerticalAlignment="Top" Width="89" Height="24"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page x:Class="curs.add_users"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="add_users">
+    <Grid>
+        <Label Content="Введите логин нового пользователя:" HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="new_login" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="25,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <Label Content="Введите пароль нового пользователя:" HorizontalAlignment="Left" Margin="25,110,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="new_password" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="25,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <Label Content="Выберите уровень доступа для нового &#xD;&#xA;пользователя:" HorizontalAlignment="Left" Margin="25,160,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="chouse_lvl" Style="{StaticResource ComboBoxTheme}" HorizontalAlignment="Left" Margin="25,200,0,0" VerticalAlignment="Top" Width="210"/>
+        <Button x:Name="save_new_user"  Style="{StaticResource ButtonTheme}" Click="save_new_user_Click" Content="Сохранить" HorizontalAlignment="Left" Margin="135,298,0,0" VerticalAlignment="Top" Width="100" IsEnabled="False" Height="24"/>
+        <Button x:Name="check_new_user"  Style="{StaticResource ButtonTheme}" Click="check_new_user_Click" Content="Проверить" HorizontalAlignment="Left" Margin="25,298,0,0" VerticalAlignment="Top" Width="100"  Height="24"/>
+        <TextBox x:Name="new_last_name" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="261,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" IsEnabled="False"/>
+        <TextBox x:Name="new_name" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="261,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" IsEnabled="False"/>
+        <TextBox x:Name="new_second_name" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="261,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" IsEnabled="False"/>
+        <TextBox x:Name="new_num_ck" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="481,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" IsEnabled="False"/>
+        <TextBox x:Name="new_title_ck" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="481,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" IsEnabled="False"/>
+        <Label Content="Введите фамилию:" HorizontalAlignment="Left" Margin="261,59,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите номер ЦК:" HorizontalAlignment="Left" Margin="481,59,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите имя:" HorizontalAlignment="Left" Margin="261,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите название ЦК:" HorizontalAlignment="Left" Margin="481,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите отчество:" HorizontalAlignment="Left" Margin="261,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,0.617"/>
+    </Grid>
+</Page>

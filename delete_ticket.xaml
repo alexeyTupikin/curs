@@ -1,0 +1,18 @@
+﻿<Page x:Class="curs.delete_ticket"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="delete_ticket">
+
+    <Grid>
+        <TextBox x:Name="text_ticket" Style="{DynamicResource copytewxt}" Margin="20,50,270,20" TextWrapping="Wrap" IsReadOnly="True"/>
+        <ComboBox x:Name="combo_id_ticket" Style="{StaticResource ComboBoxTheme}" Margin="400,139,20,206" Height="25" IsEnabled="False" SelectionChanged="combo_id_ticket_SelectionChanged"/>
+        <ComboBox x:Name="combo_discipline" Style="{StaticResource ComboBoxTheme}" Margin="400,50,20,295" Height="25" SelectionChanged="combo_discipline_Selected"/>
+        <Button x:Name="delete_ticket_click"  Style="{StaticResource ButtonTheme}" Click="delete_ticket_button" Content="Удалить" IsEnabled="False" Margin="400,300,20,20"/>
+        <Label Content="Выберите дисциплину и билет для удаления, после чего&#xD;&#xA;выберите его номер в списке правее." Margin="20,7,270,320"/>
+    </Grid>
+</Page>

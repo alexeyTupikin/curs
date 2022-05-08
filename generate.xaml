@@ -1,0 +1,21 @@
+﻿<Page x:Class="curs.generate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="generate">
+
+    <Grid>
+        <ComboBox x:Name="ChouseDicipline" Style="{StaticResource ComboBoxTheme}" SelectionChanged="ChouseDicipline_SelectionChanged" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="221" Height="24"/>
+        <Label Content="Выберите предмет" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Выберите кол-во билетов" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="161"/>
+        <ComboBox x:Name="combo_qty_ticket" Style="{StaticResource ComboBoxTheme}" IsEnabled="False" SelectionChanged="combo_qty_ticket_SelectionChanged" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="221" Height="24"/>
+        <Button x:Name="generation"  Style="{StaticResource ButtonTheme}" IsEnabled="False" Content="Сгенерировать" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Width="221" Height="52" Click="gen" FontWeight="Bold"/>
+        <Button x:Name="save_as"  Style="{StaticResource ButtonTheme}" Content="Сохранить" IsEnabled="False" HorizontalAlignment="Left" Margin="419,308,0,0" VerticalAlignment="Top" Width="221" Height="52" Click="save_as_Click"/>
+        <ComboBox x:Name="ChouseDopDisc" Style="{StaticResource ComboBoxTheme}" IsEnabled="False" HorizontalAlignment="Left" Margin="298,76,0,0" VerticalAlignment="Top" Width="221" Height="24"/>
+        <Label Content="Выберите доп. предмет, если хотите &#xD;&#xA;сгенерировать билет, для &#xD;&#xA;комплексного экзамена." HorizontalAlignment="Left" Margin="298,10,0,0" VerticalAlignment="Top" Width="224" Height="61"/>
+    </Grid>
+</Page>

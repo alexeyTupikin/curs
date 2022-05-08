@@ -1,0 +1,19 @@
+﻿<Page x:Class="curs.deleteQuestion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:curs"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="650"
+      Title="deleteQuestion">
+    <Grid>
+        <ComboBox x:Name="chouseDiscipline" Style="{StaticResource ComboBoxTheme}" HorizontalAlignment="Left" SelectionChanged="chouseDiscipline_SelectionChanged" Margin="20,80,0,0" Height="24" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Выберите дисциплину" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" Height="25"/>
+        <Label Content="Выберите номер &#xD;&#xA;билета из таблицы, &#xD;&#xA;который хотите удалить." HorizontalAlignment="Left" Margin="20,154,0,0" VerticalAlignment="Top" Height="58"/>
+        <ComboBox x:Name="chouseQty" Style="{StaticResource ComboBoxTheme}" SelectionChanged="chouseQty_SelectionChanged" HorizontalAlignment="Left" Margin="20,212,0,0" IsEnabled="False" VerticalAlignment="Top" Width="120" Height="24"/>
+        <TextBox x:Name="tableQuestion" Style="{DynamicResource copytewxt}" HorizontalAlignment="Left" Margin="204,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="280"/>
+        <Button x:Name="delete"  Style="{StaticResource ButtonTheme}" Click="delete_Click" Content="Удалить" IsEnabled="False" HorizontalAlignment="Left" Margin="20,265,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.595,-1.803" Width="76" Height="24"/>
+        <Button x:Name="search"  Style="{StaticResource ButtonTheme}" Click="search_Click" IsEnabled="False"  Height="24" Content="Поиск" HorizontalAlignment="Left" Margin="20,105,0,0" VerticalAlignment="Top" Width="76"/>
+    </Grid>
+</Page>
