@@ -8,7 +8,7 @@
       d:DesignHeight="370" d:DesignWidth="650"
       Title="editing_discipline">
     <Grid>
-        <DataGrid x:Name="data_grid_disc" HorizontalAlignment="Left" Height="275" Margin="10,48,0,0" VerticalAlignment="Top" Width="364" SelectionChanged="data_grid_disc_Selected"/>
+        <DataGrid x:Name="data_grid_disc" Style="{StaticResource GridStyle}" HorizontalAlignment="Left" Height="275" Margin="10,48,0,0" VerticalAlignment="Top" Width="364" SelectionChanged="data_grid_disc_Selected"/>
         <Button x:Name="delete_disc" Style="{StaticResource ButtonTheme}" Click="delete_disc_Click" Content="Удалить" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="131" Height="24"/>
         <Button x:Name="re_delete_disc" Style="{StaticResource ButtonTheme}" Click="re_delete_disc_Click" Content="Восстановить" HorizontalAlignment="Left" Margin="243,336,0,0" VerticalAlignment="Top" Width="131" Height="24"/>
         <Label Content="Дисциплины и их статус. Для того что бы приступить к работе &#xD;&#xA;выберите нужный элемент и соответствующую кнопку." HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Height="42" Width="364"/>

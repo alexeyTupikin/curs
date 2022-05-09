@@ -8,7 +8,7 @@
       d:DesignHeight="370" d:DesignWidth="650"
       Title="add_load">
     <Grid>
-        <DataGrid x:Name="data_grid_load" Margin="20,50,328,20" SelectionChanged="data_grid_load_SelectionChanged">
+        <DataGrid x:Name="data_grid_load" Margin="20,50,283,20" SelectionChanged="data_grid_load_SelectionChanged" Style="{StaticResource GridStyle}">
         </DataGrid>
         <Label Content="Уже имеющиеся нагрузки:" HorizontalAlignment="Left" Margin="20,20,0,320"/>
         <ComboBox x:Name="chouse_disc" Style="{StaticResource ComboBoxTheme}" Margin="372,57,108,288" Height="25" SelectionChanged="chouse_disc_SelectionChanged"/>

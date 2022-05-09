@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Themes/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="/Themes/ComboBoxTheme.xaml"/>
                 <ResourceDictionary Source="/Themes/ThemeColors.xaml"/>
+                <ResourceDictionary Source="/Themes/DataGridThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
