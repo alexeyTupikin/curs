@@ -89,6 +89,9 @@ namespace curs
             int id_q_t = 1;
             int id_q_disc = 0;
             int id_disc = 0;
+            int id_q_disc_proc1 = 0;
+            int id_q_disc_proc2 = 0;
+            int id_q_disc_proc3 = 0;
             if (last_id_ticket.Rows[0][0] != DBNull.Value)
             {
                 start_id = Convert.ToInt32(last_id_ticket.Rows[0][0]);
@@ -134,8 +137,47 @@ namespace curs
                                     id_q_disc = rand_q_disc.Next(min_p, ((id_for_practis.Rows.Count) + (min_p - 1)));
                                 }
                                 mas_id_questions.Add(id_q_disc);
+                                switch (id_q_t)
+                                {
+                                    case 1:
+                                        {
+                                            id_q_disc_proc1 = id_q_disc;
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            id_q_disc_proc2 = id_q_disc;
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            id_q_disc_proc3 = id_q_disc;
+                                            break;
+                                        }
+                                }
                             }
-                            else mas_id_questions.Add(id_q_disc);
+                            else
+                            {
+                                mas_id_questions.Add(id_q_disc);
+                                switch (id_q_t)
+                                {
+                                    case 1:
+                                        {
+                                            id_q_disc_proc1 = id_q_disc;
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            id_q_disc_proc2 = id_q_disc;
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            id_q_disc_proc3 = id_q_disc;
+                                            break;
+                                        }
+                                }
+                            }
                         }
                         else
                         {
@@ -148,21 +190,64 @@ namespace curs
                                     id_q_disc = rand_q_disc.Next(min_t, ((id_for_theory.Rows.Count) + (min_t - 1)));
                                 }
                                 mas_id_questions.Add(id_q_disc);
+                                switch (id_q_t)
+                                {
+                                    case 1:
+                                        {
+                                            id_q_disc_proc1 = id_q_disc;
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            id_q_disc_proc2 = id_q_disc;
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            id_q_disc_proc3 = id_q_disc;
+                                            break;
+                                        }
+                                }
                             }
-                            else mas_id_questions.Add(id_q_disc);
+                            else
+                            {
+                                mas_id_questions.Add(id_q_disc);
+                                switch (id_q_t)
+                                {
+                                    case 1:
+                                        {
+                                            id_q_disc_proc1 = id_q_disc;
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            id_q_disc_proc2 = id_q_disc;
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            id_q_disc_proc3 = id_q_disc;
+                                            break;
+                                        }
+                                }
+                            }                        
                         }
-                        string text_command = "EXECUTE gen_ticket @id_ticket_p, @id_q_t, @id_q_disc, @id_disc";
-                        SqlCommand command = SqlServer.CreateSqlCommand(text_command);
-                        command.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
-                        command.Parameters.Add("@id_q_t", SqlDbType.Int).Value = id_q_t;
-                        command.Parameters.Add("@id_q_disc", SqlDbType.Int).Value = id_q_disc;/////////////
-                        command.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc;
                         if (list_id_ticket.Contains(id_t_p) == false)
                         {
                             list_id_ticket.Add(id_t_p);
                         }
-                        DataTable add_question = mainWindow.CommandDB(command);
                     }
+                    string text_command = "EXECUTE gen_ticket @id_ticket_p, @id_q_disc_1, @id_q_disc_2, @id_q_disc_3, @id_disc";
+                    SqlCommand command = SqlServer.CreateSqlCommand(text_command);
+                    command.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
+                    command.Parameters.Add("@id_q_disc_1", SqlDbType.Int).Value = id_q_disc_proc1;
+                    command.Parameters.Add("@id_q_disc_2", SqlDbType.Int).Value = id_q_disc_proc2;
+                    command.Parameters.Add("@id_q_disc_3", SqlDbType.Int).Value = id_q_disc_proc3;
+                    command.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc;
+                    DataTable add_question = mainWindow.CommandDB(command);
+                    id_q_disc_proc1 = 0;
+                    id_q_disc_proc2 = 0;
+                    id_q_disc_proc3 = 0;
                 }
                 //очищаем список id вопросов
                 mas_id_questions.Clear();
@@ -184,6 +269,10 @@ namespace curs
                 int id_q_disc = 0;
                 int id_disc1 = 0;
                 int id_disc2 = 0;
+                int id_q_disc_proc1 = 0;
+                int id_q_disc_proc2 = 0;
+                int id_q_disc_proc3 = 0;
+                int num_disc = 0;
                 //
                 string chouseDisc1 = "";
                 chouseDisc1 = Convert.ToString(ChouseDicipline.SelectedValue);
@@ -252,15 +341,48 @@ namespace curs
                                             id_q_disc = rand_q_disc.Next(min_p1, ((id_for_practis1.Rows.Count) + (min_p1 - 1)));
                                         }
                                         mas_id_questions.Add(id_q_disc);
+                                        switch (id_q_t)
+                                        {
+                                            case 1:
+                                                {
+                                                    id_q_disc_proc1 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    id_q_disc_proc2 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 3:
+                                                {
+                                                    id_q_disc_proc3 = id_q_disc;
+                                                    break;
+                                                }
+                                        }
                                     }
-                                    else mas_id_questions.Add(id_q_disc);
-                                    string text_command_p1 = "EXECUTE gen_ticket @id_ticket_p, @id_q_t, @id_q_disc, @id_disc";
-                                    SqlCommand command_p1 = SqlServer.CreateSqlCommand(text_command_p1);
-                                    command_p1.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
-                                    command_p1.Parameters.Add("@id_q_t", SqlDbType.Int).Value = id_q_t;
-                                    command_p1.Parameters.Add("@id_q_disc", SqlDbType.Int).Value = id_q_disc;
-                                    command_p1.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc1;
-                                    DataTable add_p1 = mainWindow.CommandDB(command_p1);
+                                    else
+                                    {
+                                        mas_id_questions.Add(id_q_disc);
+                                        switch (id_q_t)
+                                        {
+                                            case 1:
+                                                {
+                                                    id_q_disc_proc1 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    id_q_disc_proc2 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 3:
+                                                {
+                                                    id_q_disc_proc3 = id_q_disc;
+                                                    break;
+                                                }
+                                        }
+                                    }
+                                    num_disc = 1;
                                 }
                                 else
                                 {
@@ -272,16 +394,48 @@ namespace curs
                                             id_q_disc = rand_q_disc.Next(min_p2, ((id_for_practis2.Rows.Count) + (min_p2 - 1)));
                                         }
                                         mas_id_questions.Add(id_q_disc);
+                                        switch (id_q_t)
+                                        {
+                                            case 1:
+                                                {
+                                                    id_q_disc_proc1 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    id_q_disc_proc2 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 3:
+                                                {
+                                                    id_q_disc_proc3 = id_q_disc;
+                                                    break;
+                                                }
+                                        }
                                     }
-                                    else mas_id_questions.Add(id_q_disc);
-                                    string text_command_p2 = "EXECUTE gen_ticket @id_ticket_p, @id_q_t, @id_q_disc, @id_disc";
-                                    SqlCommand command_p2 = SqlServer.CreateSqlCommand(text_command_p2);
-                                    command_p2.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
-                                    command_p2.Parameters.Add("@id_q_t", SqlDbType.Int).Value = id_q_t;
-                                    command_p2.Parameters.Add("@id_q_disc", SqlDbType.Int).Value = id_q_disc;
-                                    command_p2.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc2;
-                                    DataTable add_pr2 = mainWindow.CommandDB(command_p2);
-                                    
+                                    else
+                                    {
+                                        mas_id_questions.Add(id_q_disc);
+                                        switch (id_q_t)
+                                        {
+                                            case 1:
+                                                {
+                                                    id_q_disc_proc1 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 2:
+                                                {
+                                                    id_q_disc_proc2 = id_q_disc;
+                                                    break;
+                                                }
+                                            case 3:
+                                                {
+                                                    id_q_disc_proc3 = id_q_disc;
+                                                    break;
+                                                }
+                                        }
+                                    }
+                                    num_disc = 2;
                                 }
                             }
                             //добавляем теорию по 1 дисцплине
@@ -295,15 +449,47 @@ namespace curs
                                         id_q_disc = rand_q_disc.Next(min_t1, ((id_for_theory1.Rows.Count) + (min_t1 - 1)));
                                     }
                                     mas_id_questions.Add(id_q_disc);
+                                    switch (id_q_t)
+                                    {
+                                        case 1:
+                                            {
+                                                id_q_disc_proc1 = id_q_disc;
+                                                break;
+                                            }
+                                        case 2:
+                                            {
+                                                id_q_disc_proc2 = id_q_disc;
+                                                break;
+                                            }
+                                        case 3:
+                                            {
+                                                id_q_disc_proc3 = id_q_disc;
+                                                break;
+                                            }
+                                    }
                                 }
-                                else mas_id_questions.Add(id_q_disc);
-                                string text_command1 = "EXECUTE gen_ticket @id_ticket_p, @id_q_t, @id_q_disc, @id_disc";
-                                SqlCommand command1 = SqlServer.CreateSqlCommand(text_command1);
-                                command1.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
-                                command1.Parameters.Add("@id_q_t", SqlDbType.Int).Value = id_q_t;
-                                command1.Parameters.Add("@id_q_disc", SqlDbType.Int).Value = id_q_disc;
-                                command1.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc1;
-                                DataTable add_theory1 = mainWindow.CommandDB(command1);
+                                else
+                                {
+                                    mas_id_questions.Add(id_q_disc);
+                                    switch (id_q_t)
+                                    {
+                                        case 1:
+                                            {
+                                                id_q_disc_proc1 = id_q_disc;
+                                                break;
+                                            }
+                                        case 2:
+                                            {
+                                                id_q_disc_proc2 = id_q_disc;
+                                                break;
+                                            }
+                                        case 3:
+                                            {
+                                                id_q_disc_proc3 = id_q_disc;
+                                                break;
+                                            }
+                                    }
+                                }
                             }
                             //добавляем теорию по 2 дисцплине
                             else if (id_q_t == 2)
@@ -316,21 +502,67 @@ namespace curs
                                         id_q_disc = rand_q_disc.Next(min_t2, ((id_for_theory2.Rows.Count) + (min_t2 - 1)));
                                     }
                                     mas_id_questions.Add(id_q_disc);
+                                    switch (id_q_t)
+                                    {
+                                        case 1:
+                                            {
+                                                id_q_disc_proc1 = id_q_disc;
+                                                break;
+                                            }
+                                        case 2:
+                                            {
+                                                id_q_disc_proc2 = id_q_disc;
+                                                break;
+                                            }
+                                        case 3:
+                                            {
+                                                id_q_disc_proc3 = id_q_disc;
+                                                break;
+                                            }
+                                    }
                                 }
-                                else mas_id_questions.Add(id_q_disc);
-                                string text_command2 = "EXECUTE gen_ticket @id_ticket_p, @id_q_t, @id_q_disc, @id_disc";
-                                SqlCommand command2 = SqlServer.CreateSqlCommand(text_command2);
-                                command2.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
-                                command2.Parameters.Add("@id_q_t", SqlDbType.Int).Value = id_q_t;
-                                command2.Parameters.Add("@id_q_disc", SqlDbType.Int).Value = id_q_disc;
-                                command2.Parameters.Add("@id_disc", SqlDbType.Int).Value = id_disc2;
+                                else
+                                {
+                                    mas_id_questions.Add(id_q_disc);
+                                    switch (id_q_t)
+                                    {
+                                        case 1:
+                                            {
+                                                id_q_disc_proc1 = id_q_disc;
+                                                break;
+                                            }
+                                        case 2:
+                                            {
+                                                id_q_disc_proc2 = id_q_disc;
+                                                break;
+                                            }
+                                        case 3:
+                                            {
+                                                id_q_disc_proc3 = id_q_disc;
+                                                break;
+                                            }
+                                    }
+                                }
                                 if (list_id_ticket.Contains(id_t_p) == false)
                                 {
                                     list_id_ticket.Add(id_t_p);
                                 }
-                                DataTable add_theory2 = mainWindow.CommandDB(command2);
                             }
                         }
+                        string text_command = "EXECUTE gen_ticket2 @id_ticket_p, @id_q_disc_1, @id_q_disc_2, @id_q_disc_3, @id_disc1, @id_disc2, @num_disc";
+                        SqlCommand command = SqlServer.CreateSqlCommand(text_command);
+                        command.Parameters.Add("@id_ticket_p", SqlDbType.Int).Value = id_t_p;
+                        command.Parameters.Add("@id_q_disc_1", SqlDbType.Int).Value = id_q_disc_proc1;
+                        command.Parameters.Add("@id_q_disc_2", SqlDbType.Int).Value = id_q_disc_proc2;
+                        command.Parameters.Add("@id_q_disc_3", SqlDbType.Int).Value = id_q_disc_proc3;
+                        command.Parameters.Add("@id_disc1", SqlDbType.Int).Value = id_disc1;
+                        command.Parameters.Add("@id_disc2", SqlDbType.Int).Value = id_disc2;
+                        command.Parameters.Add("@num_disc", SqlDbType.Int).Value = num_disc;
+                        DataTable add_ticket = mainWindow.CommandDB(command);
+                        id_q_disc_proc1 = 0;
+                        id_q_disc_proc2 = 0;
+                        id_q_disc_proc3 = 0;
+                        num_disc = 0;
                     }
                     //очищаем список id вопросов
                     mas_id_questions.Clear();
