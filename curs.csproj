@@ -97,7 +97,6 @@
     <Compile Include="teacherhChoise.xaml.cs">
       <DependentUpon>teacherhChoise.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextLog.cs" />
     <Page Include="add_load.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
