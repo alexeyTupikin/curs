@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Win32;
 
 namespace curs
 {
@@ -582,7 +583,10 @@ namespace curs
 
         private async void save_as_Click(object sender, RoutedEventArgs e)
         {
-            File.WriteAllText(@"C:\Users\eoaal\OneDrive\Рабочий стол\1.txt", "");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+            string full_path = openFileDialog.FileName;
+            File.WriteAllText(@full_path, "");
             int year = DateTime.Today.Year;
             int k = 1;
             DataTable sel_qty = mainWindow.Select("SELECT COUNT(*) FROM chairmenCK");
@@ -594,7 +598,7 @@ namespace curs
             if (gen_true)
             {
                 MessageBox.Show("True, go save");
-                using (StreamWriter writer = new StreamWriter(@"C:\Users\eoaal\OneDrive\Рабочий стол\1.txt", true))
+                using (StreamWriter writer = new StreamWriter(@full_path, true))
                 {
                     for (int i = 0; i < list_id_ticket.Count; i++)
                     {
@@ -639,7 +643,7 @@ namespace curs
                                 $"ON dbo.[load].id_discipline = dbo.disciplines.id_discipline WHERE (title_discipline = '{ticket_w.Rows[0][1]}')");
                             string titular_2 = $"ФБГОУ ВПО МГУТУ им. К.Г. Разумовского Университетский колледж информационных технологий.\n" +
                                 $"Утверждаю\t\tЭкзаменационный билет №{ticket_w.Rows[0][0]}\t\t\t\t\tРассмотрено цикловой комиссией:\n" +
-                                $"Зам. директора по УМР\tПо дисциплинам: {ticket_w.Rows[0][1]},\n\t\t\t\t\t{ticket_w.Rows[1][1]}\t\t\t\t{fio_title.Rows[num_ck][1]}\n" +
+                                $"Зам. директора по УМР\tПо дисциплинам: {ticket_w.Rows[0][1]},\n\t\t\t\t\t{ticket_w.Rows[1][1]}\t\t\t{fio_title.Rows[num_ck][1]}\n" +
                                 $"В.В. Лындина\t\tСпециальность: 09.02.03\t\t\t{year} г.\n" +
                                 $"{year} г.\t\t\tКурс 3 Семестр 6\t\t\tПротокол №762348\n\n" +
                                 $"1. {ticket_w.Rows[0][2]}\n" +
