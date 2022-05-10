@@ -35,7 +35,7 @@ namespace curs
             data_grid_update();
         }
 
-        public void data_grid_update()
+        public void data_grid_update() //обновляет информацию о пользователях
         {
             DataTable data_gr_sql = mainWindow.Select("SELECT (id_user) AS id__user, login, password, (lvl_access) AS lvl__access FROM users");
             data_grid.ItemsSource = data_gr_sql.DefaultView;
@@ -53,7 +53,7 @@ namespace curs
             new_title_pck.Text = "";
         }
 
-        private void save_editing_user_Click(object sender, RoutedEventArgs e)
+        private void save_editing_user_Click(object sender, RoutedEventArgs e) //сохраняет изменения
         {
             if(Convert.ToInt32(combo_lvl_user.SelectedIndex) == 1)
             {
@@ -80,7 +80,7 @@ namespace curs
             data_grid_update();
         }
 
-        private void proccess_Click(object sender, RoutedEventArgs e)
+        private void proccess_Click(object sender, RoutedEventArgs e) //выводит информацию о выбранном пользователе для редактирования
         {
             DataTable selected_row_id = mainWindow.Select("SELECT id_user FROM users");
             int in_sel_row = Convert.ToInt32(data_grid.SelectedIndex);
@@ -154,7 +154,7 @@ namespace curs
             return combo_sel;
         }
 
-        public void def_save()
+        public void def_save() //сохраняет только логин, пароль и уровень пользователя
         {
             int flag_check = check_user();
             if (flag_check == 0)
@@ -178,7 +178,7 @@ namespace curs
             }
         }
 
-        public void save_for_teacher()
+        public void save_for_teacher() //сохраняет информацию для учителя
         {
             int flag_check = check_user();
             if(flag_yes_no == 1)
@@ -197,7 +197,7 @@ namespace curs
             }
         }
 
-        public void save_for_pck()
+        public void save_for_pck() //сохраняет информацию для пцк
         {
             int flag_check = check_user();
             if (flag_yes_no == 1)
@@ -218,7 +218,7 @@ namespace curs
             }
         }
 
-        public int check_for_teacher()
+        public int check_for_teacher() //проверяет ввод данных для учителя
         {
             int flag_check = 0;
             if (flag_yes_no == 1)
@@ -247,7 +247,7 @@ namespace curs
             return flag_check;
         }
 
-        public int check_user()
+        public int check_user() //проверяет ввод 
         {
             int flag_check = 0;
             if (new_login_text.Text == "")
@@ -267,7 +267,7 @@ namespace curs
                 return flag_check;
         }
 
-        public int check_login()
+        public int check_login() //проверяет данные логина
         {
             int flag_check = 0;
             if (flag_edit_login > 1)
@@ -285,7 +285,7 @@ namespace curs
             return flag_check;
         }
 
-        public int check_for_pck()
+        public int check_for_pck() //проверяет ввод данных для пцк
         {
             int flag_check = 0;
             if (flag_yes_no == 1)

@@ -60,7 +60,7 @@ namespace curs
             add_load,
             editing_discipline
         }
-        public void OpenPage(pages page)
+        public void OpenPage(pages page) //осуществляет переход между страницами
         {
             if (page == pages.login)
             {
@@ -133,7 +133,7 @@ namespace curs
                 frame.Navigate(new editing_discipline(this));
             }
         }
-        public DataTable Select(string selectSQL)  
+        public DataTable Select(string selectSQL)  //функция для обычной выборки из бд
         {
             DataTable dataTable = new DataTable();
             SqlCommand command = SqlServer.CreateSqlCommand(selectSQL);
@@ -146,7 +146,7 @@ namespace curs
             this.Close();
         }
 
-        public DataTable CommandDB(SqlCommand selectSql)
+        public DataTable CommandDB(SqlCommand selectSql) //функция для выполнения процедур
         {
             DataTable dataTable = new DataTable();
             try
@@ -161,7 +161,7 @@ namespace curs
             return dataTable;
         }
 
-        private void go_back_Click(object sender, RoutedEventArgs e)
+        private void go_back_Click(object sender, RoutedEventArgs e) //возврат на предыдущую таблицу
         {
             if (frame.CanGoBack == true)
             {

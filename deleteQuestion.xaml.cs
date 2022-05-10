@@ -40,7 +40,7 @@ namespace curs
             }
         }
 
-        private void delete_Click(object sender, RoutedEventArgs e)
+        private void delete_Click(object sender, RoutedEventArgs e) //удаляет вопрос из бд
         { 
             int id_question = Convert.ToInt32(chouseQty.SelectedValue);
             string text_command = "EXECUTE delete_question @id_question_p";
@@ -54,7 +54,7 @@ namespace curs
             MessageBox.Show("Вопрос удален.");
         }
 
-        private void search_Click(object sender, RoutedEventArgs e)
+        private void search_Click(object sender, RoutedEventArgs e) //ищет вопросы по заданым параметрам и выводит их
         {
             string chouseDisc = "";
             chouseDisc = Convert.ToString(chouseDiscipline.SelectedValue);

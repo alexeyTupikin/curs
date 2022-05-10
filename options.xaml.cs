@@ -29,7 +29,7 @@ namespace curs
             mainWindow = _mainWindow;
         }
 
-        private void saveSettings(object sender, RoutedEventArgs e)
+        private void saveSettings(object sender, RoutedEventArgs e) //создание нового подключения
         {
             if (computer.Text.Length > 0)
             {
@@ -53,7 +53,7 @@ namespace curs
             }
             else MessageBox.Show("Вы не ввели имя компьютера");
         }
-        private void returnToLogin(object sender, RoutedEventArgs e)
+        private void returnToLogin(object sender, RoutedEventArgs e) //возврат на форму авторизации
         {
             mainWindow.OpenPage(MainWindow.pages.login);
         }

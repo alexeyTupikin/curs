@@ -50,7 +50,7 @@ namespace curs
                 combo_qty_ticket.Items.Add($"{i}");
             }
         }
-        private void gen(object sender, RoutedEventArgs e)
+        private void gen(object sender, RoutedEventArgs e) //приступает к генерации 
         {
             list_id_ticket.Clear();
             if (ChouseDicipline.SelectedItem == null)
@@ -255,7 +255,7 @@ namespace curs
             }
             else MessageBox.Show("Выбранная вами дисциплина на данный момент не доступна для генерации билетов, т.к. подлежит удалению." +
                 " Если вы хотите использовать эту дисциплину при генерации, обратитесь к админу для ее восстановления.");
-        }
+        } //генерирует билеты по 1 дисциплине
 
         public void gen_2_discipline()
         {
@@ -579,9 +579,9 @@ namespace curs
                 " Если вы хотите использовать эту дисциплину при генерации, обратитесь к админу для ее восстановления.");
                 }
             }
-        }
+        } //генерирует билеты по 2 дисциплинам
 
-        private async void save_as_Click(object sender, RoutedEventArgs e)
+        private async void save_as_Click(object sender, RoutedEventArgs e) //сохраняет сгенерированные билеты в файл
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();

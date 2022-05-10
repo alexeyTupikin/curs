@@ -57,7 +57,7 @@ namespace curs
                 }
             }
         }
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void add_Click(object sender, RoutedEventArgs e) //добавляет вопрос в базу данных
         {
             string discipline = "";
             string type = "";

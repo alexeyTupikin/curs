@@ -11,7 +11,7 @@ namespace curs
     public static class SqlServer
     {
         private static SqlConnection SqlConnection { get; set; }
-        public static void CreateConnecion(string computer, string database)
+        public static void CreateConnecion(string computer, string database) //создает подключение
         {
             SqlConnection = new SqlConnection(@"Data Source=" + computer + ";;Initial Catalog=" + database + ";"
                     + "Integrated Security=True;Connect Timeout=15;Encrypt=False;"
@@ -19,7 +19,7 @@ namespace curs
                     "TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             SqlConnection.Open();
         }
-        public static SqlCommand CreateSqlCommand(string command)
+        public static SqlCommand CreateSqlCommand(string command) //функцция создает новую переменную класса SqlCommand с текстом, который передается в нее
         {
             return new SqlCommand
             {

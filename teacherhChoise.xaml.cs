@@ -27,22 +27,22 @@ namespace curs
             mainWindow = _mainWindow;
         }
 
-        private void generation_Click(object sender, RoutedEventArgs e)
+        private void generation_Click(object sender, RoutedEventArgs e) //переходит на форму генерации билетов
         {
             mainWindow.OpenPage(MainWindow.pages.generate);
         }
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void add_Click(object sender, RoutedEventArgs e) //переходит на форму добавления вопроса
         {
             mainWindow.OpenPage(MainWindow.pages.add_question);
         }
 
-        private void editing_Click(object sender, RoutedEventArgs e)
+        private void editing_Click(object sender, RoutedEventArgs e) //переходит на форму редактирования вопроса
         {
             mainWindow.OpenPage(MainWindow.pages.editing);
         }
 
-        private void removal_Click(object sender, RoutedEventArgs e)
+        private void removal_Click(object sender, RoutedEventArgs e) //переходит на форму удаления вопроса
         {
             mainWindow.OpenPage(MainWindow.pages.deleteQuestion);
         }

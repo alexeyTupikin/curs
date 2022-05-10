@@ -34,7 +34,7 @@ namespace curs
                 combo_discipline.Items.Add(Convert.ToString(disc.Rows[i][0]));
             }
         }
-        public void textBlock_ticket()
+        public void textBlock_ticket() //обновляем TextBox с билетами
         {
             list_id_ticket.Clear();
             combo_id_ticket.Items.Clear();
@@ -65,7 +65,7 @@ namespace curs
                 text_ticket.AppendText($"{'\n'}");
             }
         }
-        private void delete_ticket_button(object sender, RoutedEventArgs e)
+        private void delete_ticket_button(object sender, RoutedEventArgs e) //удаляет выбранный билет
         {
             if ((combo_discipline.SelectedValue != null) && (combo_id_ticket.SelectedValue != null))
             {

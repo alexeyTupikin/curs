@@ -30,7 +30,7 @@ namespace curs
             dg_update();
         }
 
-        public void dg_update()
+        public void dg_update() //обновляет информацию о дисциплинах
         {
             DataTable data_grid = mainWindow.Select("SELECT (title_discipline) AS title__discipline, (remove_or_not) AS remove__or__not FROM disciplines");
             data_grid_disc.ItemsSource = data_grid.DefaultView;
@@ -43,7 +43,7 @@ namespace curs
             edit_title_disc.IsEnabled = false;
         }
 
-        private void delete_disc_Click(object sender, RoutedEventArgs e)
+        private void delete_disc_Click(object sender, RoutedEventArgs e) //удаляет выбранную дисциплину
         {
             int sel_row = data_grid_disc.SelectedIndex;
             DataTable sel_id = mainWindow.Select("SELECT id_discipline FROM disciplines");
@@ -56,7 +56,7 @@ namespace curs
             MessageBox.Show("Дисциплина удалена.");
         }
 
-        private void re_delete_disc_Click(object sender, RoutedEventArgs e)
+        private void re_delete_disc_Click(object sender, RoutedEventArgs e) //восстанавливает выбранную дисциплину
         {
             int sel_row = data_grid_disc.SelectedIndex;
             DataTable sel_id = mainWindow.Select("SELECT id_discipline FROM disciplines");
@@ -69,7 +69,7 @@ namespace curs
             MessageBox.Show("Дисциплины восстановлена.");
         }
 
-        private void proc_button_Click(object sender, RoutedEventArgs e)
+        private void proc_button_Click(object sender, RoutedEventArgs e) //выводит информацию о выбранной дисциплине для ее редактирования
         {
             new_title_disc.Text = "";
             int in_sel_row = data_grid_disc.SelectedIndex;
@@ -83,14 +83,14 @@ namespace curs
             add_button.IsEnabled = false;
         }
 
-        private void add_button_Click(object sender, RoutedEventArgs e)
+        private void add_button_Click(object sender, RoutedEventArgs e) //приступает к добавлению
         {
             new_title_disc.IsEnabled = true;
             edit_title_disc.Text = "";
             save_button.IsEnabled = true;            
         }
 
-        private void save_button_Click(object sender, RoutedEventArgs e)
+        private void save_button_Click(object sender, RoutedEventArgs e) //сохраняет изменения
         {
             if (edit_title_disc.Text != "")
             {

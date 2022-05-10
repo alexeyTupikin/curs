@@ -34,7 +34,7 @@ namespace curs
             dg_load();
         }
 
-        public void dg_load()
+        public void dg_load() //обновляем DataGrid и все ComboBox
         {
             id_disc_combo.Items.Clear();
             id_user_combo.Items.Clear();
@@ -71,7 +71,7 @@ namespace curs
             add_new_load.IsEnabled = false;
         }
 
-        private void add_new_load_Click(object sender, RoutedEventArgs e)
+        private void add_new_load_Click(object sender, RoutedEventArgs e) //функция добавляения нагрузки в базу данных с проверкой на ее наличие в базе данных
         {
             string text_command = "EXECUTE sel_id_teacher @last_name";
             SqlCommand command = SqlServer.CreateSqlCommand(text_command);
@@ -96,7 +96,7 @@ namespace curs
             else MessageBox.Show("Проверьте правильность введенных вами данных. Такая нагрузка уже существует.");
         }
 
-        private void delete_load_Click(object sender, RoutedEventArgs e)
+        private void delete_load_Click(object sender, RoutedEventArgs e) //функция удаления существующей нагрузки
         {
             DataTable selected_row_id = mainWindow.Select("SELECT id_user FROM [load]");
             int in_sel_row = Convert.ToInt32(data_grid_load.SelectedIndex);
@@ -112,7 +112,7 @@ namespace curs
             MessageBox.Show("Нагузка успешно удалена.");
         }
 
-        private void editing_load_Click(object sender, RoutedEventArgs e)
+        private void editing_load_Click(object sender, RoutedEventArgs e) //функция редактирования нагрузки
         {
 
             if ((id_user_combo.SelectedValue != null) && (id_disc_combo.SelectedValue != null))
@@ -151,7 +151,7 @@ namespace curs
             }
         }
 
-        private void proc_Click(object sender, RoutedEventArgs e)
+        private void proc_Click(object sender, RoutedEventArgs e) //функция, которая выводит информацию из выделенной строки в DataGrid в поля для ее редактирования
         {
             DataTable sel_load = mainWindow.Select("SELECT        dbo.[load].id_user, dbo.[load].id_discipline, " +
                 "dbo.disciplines.title_discipline, dbo.teacher.last_name " +
@@ -197,7 +197,7 @@ namespace curs
             }
         }
 
-        public int check_load(int id_user, int id_disc)
+        public int check_load(int id_user, int id_disc) //проверяет есть ли такая нагрузка в базе данных
         {
             int flag_check = 0;
             string text_command = "SELECT COUNT(*) FROM load WHERE id_user = @id_user AND id_discipline = @id_disc";

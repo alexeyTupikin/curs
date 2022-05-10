@@ -41,7 +41,7 @@ namespace curs
             chouseAction.Items.Add("Редактирование записей");
         }
 
-        private void proceed_to_Click(object sender, RoutedEventArgs e)
+        private void proceed_to_Click(object sender, RoutedEventArgs e) //получает выбранную таблицу и действие над ней и перенаправляет на необходимую форму
         {
             if(Convert.ToString(chouseTable.SelectedValue) == "Вопросы")
             {

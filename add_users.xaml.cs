@@ -33,7 +33,7 @@ namespace curs
             chouse_lvl.Items.Add("2 - Председатель ЦК");
         }
 
-        private void save_new_user_Click(object sender, RoutedEventArgs e)
+        private void save_new_user_Click(object sender, RoutedEventArgs e) //сохраняет нового пользователя в базу данных
         {
             int flag_login = 0;
             int flag_password = 0;
@@ -106,7 +106,7 @@ namespace curs
             }
         }
 
-        private void check_new_user_Click(object sender, RoutedEventArgs e)
+        private void check_new_user_Click(object sender, RoutedEventArgs e) //проверяет ввод
         {
             int flag_check = 0;
             MessageBoxResult messageBoxResult1 = System.Windows.MessageBox.Show("Вы уверены в введенных вами данных?", "Нет", System.Windows.MessageBoxButton.YesNo);
@@ -176,7 +176,7 @@ namespace curs
             }
         }
         
-        public int check_for_teacher()
+        public int check_for_teacher() //проверяет ввод данных для учителя
         {
             int flag_check = 0;
             if (new_last_name.Text == "")
@@ -202,7 +202,7 @@ namespace curs
             return flag_check;
         }
 
-        public int check_for_pck()
+        public int check_for_pck() //проверяет ввод данных для пцк
         {
             int flag_check = 0;
             if (new_last_name.Text == "")
@@ -238,7 +238,7 @@ namespace curs
             return flag_check;
         }
 
-        public void save_for_teacher()
+        public void save_for_teacher() //сохраняет информацию о новом учителе
         {
             string text_command = "EXECUTE save_user @new_login, @new_password, @lvl_access";
             SqlCommand command = SqlServer.CreateSqlCommand(text_command);
@@ -260,7 +260,7 @@ namespace curs
             DataTable save_teacher_sql = mainWindow.CommandDB(save_teacher);
         }
 
-        public void save_for_pck()
+        public void save_for_pck() //сохраняет информацию для нового пцк
         {
             string text_command = "EXECUTE save_user @new_login, @new_password, @lvl_access";
             SqlCommand command = SqlServer.CreateSqlCommand(text_command);

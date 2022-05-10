@@ -46,7 +46,7 @@ namespace curs
 
         }
 
-        private void search_Click(object sender, RoutedEventArgs e)
+        private void search_Click(object sender, RoutedEventArgs e) //поиск вопросов по заданым параметрам и вывод их
         {
             chouse_id.Items.Clear();
             text_box.Text = "";
@@ -82,7 +82,7 @@ namespace curs
             chouse_id.IsEnabled = true;
         }
 
-        private void go_editing_Click(object sender, RoutedEventArgs e)
+        private void go_editing_Click(object sender, RoutedEventArgs e) //приступить к редактированию
         {
             text_box.Text = "";
             DataTable edit_question = mainWindow.Select($"SELECT question FROM questions WHERE id_question = {Convert.ToInt32(chouse_id.SelectedValue)}");
@@ -91,7 +91,7 @@ namespace curs
             save_question.IsEnabled = true;
         }
 
-        private void save_question_Click(object sender, RoutedEventArgs e)
+        private void save_question_Click(object sender, RoutedEventArgs e) //сохраняет изменения
         {
             string update_question = $"{text_box.Text}";
             int id_question_p = Convert.ToInt32(chouse_id.SelectedValue);

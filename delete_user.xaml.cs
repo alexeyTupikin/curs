@@ -40,7 +40,7 @@ namespace curs
             list_users();
         }
 
-        private void delete_Click(object sender, RoutedEventArgs e)
+        private void delete_Click(object sender, RoutedEventArgs e) //удаляет выбранного пользователя
         {
             DataTable selected_row_id = mainWindow.Select("SELECT id_user FROM users");
             int in_sel_row = Convert.ToInt32(data_grid_users.SelectedIndex);
@@ -68,7 +68,7 @@ namespace curs
             MessageBox.Show("Польователь удален.");
         }
 
-        public void list_users()
+        public void list_users() //обновляет информацию о пользователях 
         {
             DataTable data_gr_sql = mainWindow.Select("SELECT (id_user) AS id__user, login, password, (lvl_access) AS lvl__access FROM users");
             data_grid_users.ItemsSource = data_gr_sql.DefaultView;
