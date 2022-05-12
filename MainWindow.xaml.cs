@@ -31,7 +31,7 @@ namespace curs
             OpenPage(pages.login);
             //DESKTOP-VCUQV2I\SQLEXPRESS
             //DESKTOP-9SNLLHT\SQLEXPRESS01
-            computer = @"DESKTOP-9SNLLHT\SQLEXPRESS01";
+            computer = @"DESKTOP-VCUQV2I\SQLEXPRESS";
             database = @"kurs_Alexey";
             try
             {

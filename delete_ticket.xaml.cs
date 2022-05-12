@@ -73,11 +73,11 @@ namespace curs
                 SqlCommand command = SqlServer.CreateSqlCommand(text_command);
                 command.Parameters.Add("@id_ticket", SqlDbType.Int).Value = Convert.ToString(combo_id_ticket.SelectedValue);
                 DataTable delete_ticket_p = mainWindow.CommandDB(command);
-                textBlock_ticket();
                 delete_ticket_click.IsEnabled = false;
                 combo_id_ticket.IsEnabled = false;
-                combo_discipline.SelectedValue = null;
                 combo_id_ticket.SelectedValue = null;
+                text_ticket.Text = "";
+                textBlock_ticket();
                 MessageBox.Show("Билет удален.");
             }
         }
